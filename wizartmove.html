@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Move Logo to Clicked Position</title>
+<style>
+
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer; 
+  transition: top 8s, left 8s; 
+}
+</style>
+</head>
+<body>
+<img id="logo"
+    src="./wizaart-img.56787174.gif"
+    height="50px"
+    width="50px"
+    alt="Logo">
+
+<script>
+
+document.addEventListener('click', function(event) {
+  var logo = document.getElementById('logo');
+  var newX = event.clientX;
+  var newY = event.clientY;
+  
+ 
+  logo.style.left = newX - (logo.offsetWidth / 2) + 'px';
+  logo.style.top = newY - (logo.offsetHeight / 2) + 'px';
+});
+</script>
+</body>
+</html>
